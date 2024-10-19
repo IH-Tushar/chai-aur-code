@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(214, 182, 182, 0.2);
+        }
+    </style>
+</head>
+<body id="ami" style="background-color: rgb(14, 14, 59);">
+    <h1 style="color: #f0f0f0; z-index: inherit; text-align: center;
+     border: 1px solid #f0f0f0; border-radius: 15px; padding: 10px; background-color: #121816; animation: fadeIn 2s ease-in-out;">Image Gallery</h1>
+        <ul class="gallery" style="background-color: #254438; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ; height: 600px; width: 1000px; display: flex; justify-items: center; align-items: center; border-top: 2px solid rgb(88, 218, 168); border-radius: 10px;">
+            <li>
+                <img id="Image1" src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Image 1" >
+            </li>
+            <li><img id="Image2" src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2"></li>
+            <li>
+                <img id="Image3" src="https://images.pexels.com/photos/28841120/pexels-photo-28841120/free-photo-of-gourmet-burger-with-fries-and-cherry-tomatoes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image 3">
+            </li>
+            <li>
+                <img id="Image4" src="https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29kaW5nfGVufDB8fDB8fHww" alt="Image 4">
+            </li>
+        </ul>
+        
+    <script>
+        //attechEvent() is working in early in internet explore
+        // jQuary - onEvent 
+        // document.getElementById('Image1').onclick = function(){
+        //     alert('hello');
+        // }
+
+        // document.getElementById('Image3').addEventListener('click', function (e){
+        //     console.log(e);
+            
+        // });
+        // document.getElementById('ami').addEventListener('click', function(e){
+        //     console.log('clikced div url');
+            
+        // }, true)
+
+        // document.getElementById('imk').addEventListener('click', function(e){
+        //     console.log('clikced inside url');
+            
+        // }, true)
+        // document.getElementById('Image4').addEventListener('click', function(e){
+        //     console.log('clikced iimage 4 url');
+            
+        // }, true)
+
+        document.querySelector('.gallery').addEventListener('click',function(e){
+            
+        console.log(e.target.tagName);
+            
+            if (e.target.tagName === 'IMG') {
+                let removeit = e.target.parentNode;
+            console.log(removeit);
+            removeit.parentNode.removeChild(removeit)   
+            }
+            
+            // removeit.remove()
+
+
+
+
+            
+        })
+
+    </script>
+</body>
+</html>
