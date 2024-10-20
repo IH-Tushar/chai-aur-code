@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-3xl font-bold text-blue-700 px-5 py-5">IH-Tushar_developer</h1>
+
+    <div id ="buttons" class="px-20">
+        <button id="start" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">start</button>
+        <button id="stop" class="px-4 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600">Stop</button>
+    </div>
+    <script>
+        const again_name = function () {
+            console.log('IH-TUSHAR', Date.now());
+            
+        }
+        let change_interval = setInterval(again_name ,2000);;
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(change_interval);
+        })
+        document.querySelector('#start').addEventListener('click', function(){
+            change_interval = setInterval(again_name,1000)
+        })
+        
+
+    </script>
+</body>
+</html>
