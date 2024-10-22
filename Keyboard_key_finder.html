@@ -7,24 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <!-- <div id="color-box" class="w-32 h-32 bg-red-500"></div> -->
     <p class="bg-blue-600 border-gray-500 rounded-md px-4 py-2 mx-5 my-5 w-60 text-center">change the color</p>
     <button id="start" class="bg-blue-500 border-white-500 rounded-md px-10 py-2 mx-5 my-5">start</button>
     <button id="stop" class="bg-blue-500 border-white-500 rounded-md px-10 py-2 mx-5 my-5">stop</button>
 
     <script>
 
-      document.querySelector('#start').addEventListener('click', function(){
-        setInterval(() => {
-          console.log('tushar');
-        }, 1000);
-      })  
-      document.querySelector('stop').addEventListener('click' , function () {
-        const clear = setInterval(() => {
-          console.log('tushar');
-        }, 1000);
-        clearInterval()
+      let interval_Id
+      
+      document.querySelector('#start').addEventListener('click', function () {
+          interval_Id = setInterval(function() {
+
+          },1000)
+          
       })
-    </script>
+      
+      document.querySelector('#stop').addEventListener('click', function () {
+          clearInterval(interval_Id)
+      })
+      
+  </script>
 
 
 </body>
