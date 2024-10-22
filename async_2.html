@@ -14,19 +14,21 @@
         <button id="stop" class="px-4 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600">Stop</button>
     </div>
     <script>
-        const again_name = function () {
-            console.log('IH-TUSHAR', Date.now());
+
+        let interval_Id
+        
+        document.querySelector('#start').addEventListener('click', function () {
+            interval_Id = setInterval(function() {
+                console.log('tushar', Date.now());
+                
+            },1000)
             
-        }
-        let change_interval = setInterval(again_name ,2000);;
-        document.querySelector('#stop').addEventListener('click',function(){
-            clearInterval(change_interval);
-        })
-        document.querySelector('#start').addEventListener('click', function(){
-            change_interval = setInterval(again_name,1000)
         })
         
-
+        document.querySelector('#stop').addEventListener('click', function () {
+            clearInterval(interval_Id)
+        })
+        
     </script>
 </body>
 </html>
